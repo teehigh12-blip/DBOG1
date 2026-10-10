@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.dbog.online/sitemap.xml
+Sitemap: https://dbog.online/sitemap.xml
