@@ -47,17 +47,17 @@
     </div>
     <div class="custom-amount" hidden><label for="customAmount">Enter amount in naira</label><input id="customAmount" type="number" min="100" step="100" placeholder="e.g. 3000" inputmode="numeric"></div>
     <article class="featured-impact">
-      <img src="assets/1000221367.jpg" alt="Learning materials prepared for children">
+      <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1000&q=85" alt="Books and notebooks that a donation can help provide">
       <div class="featured-copy"><span class="amount-tag" id="impactTag">₦5,000 CAN HELP PROVIDE</span><h3 id="impactTitle">Support a child's learning</h3><p id="impactDescription">Your contribution can help DBOG provide learning materials and practical support for children.</p><button class="primary-button" id="continueButton">♡ &nbsp; Continue to Donate</button></div>
       <ul class="impact-list"><li>Learning materials</li><li>Essential supplies</li><li>Community support</li></ul>
     </article>
     <div class="section-heading impact-heading"><h2>See How Your Donation Helps</h2><p>Choose a project that matters to you.</p></div>
     <div class="impact-cards">
-      <button class="impact-card" data-card-amount="1000"><img src="assets/1000221270.jpg" alt="DBOG community food support"><span class="card-price">₦1,000</span><div><h3>Help Feed a Child</h3><p>Support DBOG's community feeding and No Hunger activities.</p></div></button>
-      <button class="impact-card" data-card-amount="2000"><img src="assets/1000221367.jpg" alt="School supplies for children"><span class="card-price">₦2,000</span><div><h3>Books & Learning</h3><p>Help provide learning materials and encourage a child's education.</p></div></button>
-      <button class="impact-card" data-card-amount="5000"><img src="assets/1000221365.jpg" alt="Children participating in a DBOG outreach"><span class="card-price">₦5,000</span><div><h3>Children's Support</h3><p>Contribute towards practical support for children and families.</p></div></button>
-      <button class="impact-card" data-card-amount="10000"><img src="assets/1000221269.jpg" alt="DBOG volunteers distributing essential items"><span class="card-price">₦10,000</span><div><h3>Essential Supplies</h3><p>Help provide supplies for outreach and community activities.</p></div></button>
-      <button class="impact-card" data-card-amount="25000"><img src="assets/1000221274.jpg" alt="DBOG team supporting community activities"><span class="card-price">₦25,000</span><div><h3>Support a Project</h3><p>Make a larger contribution towards DBOG's approved initiatives.</p></div></button>
+      <button class="impact-card" data-card-amount="1000"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=700&q=85" alt="A nutritious meal that donations can help provide"><span class="card-price">₦1,000</span><div><h3>Help Feed a Child</h3><p>Support DBOG's community feeding and No Hunger activities.</p></div></button>
+      <button class="impact-card" data-card-amount="2000"><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1000&q=85" alt="Pens and writing materials for students"><span class="card-price">₦2,000</span><div><h3>Books & Learning</h3><p>Help provide learning materials and encourage a child's education.</p></div></button>
+      <button class="impact-card" data-card-amount="5000"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=85" alt="Ingredients and food for a community meal"><span class="card-price">₦5,000</span><div><h3>Children's Support</h3><p>Contribute towards practical support for children and families.</p></div></button>
+      <button class="impact-card" data-card-amount="10000"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=85" alt="A school backpack and supplies"><span class="card-price">₦10,000</span><div><h3>Essential Supplies</h3><p>Help provide supplies for outreach and community activities.</p></div></button>
+      <button class="impact-card" data-card-amount="25000"><img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=700&q=85" alt="Classroom and learning materials"><span class="card-price">₦25,000</span><div><h3>Support a Project</h3><p>Make a larger contribution towards DBOG's approved initiatives.</p></div></button>
     </div>
     <section class="bank-section" id="bank-transfer" hidden>
       <div class="bank-heading"><p class="eyebrow dark-eyebrow">YOUR CONTRIBUTION MATTERS</p><h2>Complete Your Donation</h2><p>Transfer your chosen amount to DBOG's official bank account. No payment is taken on this website.</p></div>
@@ -79,28 +79,6 @@
 </main>
 <footer><div class="footer-inner"><a class="footer-brand" href="index.html#home"><img src="assets/logo.jpg" alt=""><span><b>DBOG</b><small>The Bond Of Greatness Humanitarian Initiative Lagos Nigeria</small></span></a><p>Serving our communities with compassion, integrity and practical support.</p><a href="index.html#contact">Contact DBOG</a></div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script>
-(function(){
-  const amounts=[...document.querySelectorAll('.amount-button')], customWrap=document.querySelector('.custom-amount'), customInput=document.getElementById('customAmount');
-  const tag=document.getElementById('impactTag'), title=document.getElementById('impactTitle'), desc=document.getElementById('impactDescription'), bank=document.getElementById('bank-transfer'), transferAmount=document.getElementById('transferAmount'), toast=document.getElementById('toast');
-  let selected=5000, toastTimer;
-  const naira=n=>'₦'+Number(n).toLocaleString('en-NG');
-  function impact(n){if(n===1000)return ['HELP FEED A CHILD','Support a child's meal','Your contribution can support DBOG community feeding and No Hunger activities.'];if(n===2000)return ['SUPPORT LEARNING','Books and learning materials','Your contribution can help provide learning materials and practical support for children.'];if(n===5000)return ['CHILDREN’S SUPPORT','Support a child’s essential needs','Your contribution can support DBOG’s children and community initiatives.'];if(n===10000)return ['COMMUNITY SUPPLIES','Support essential supplies','Help provide supplies for DBOG outreach and community activities.'];if(n>=25000)return ['SUPPORT A PROJECT','Help DBOG do more','Make a larger contribution towards DBOG’s approved humanitarian initiatives.'];return ['YOUR CONTRIBUTION','Every amount can make a difference','Your contribution will support DBOG’s approved humanitarian projects.'];}
-  function setAmount(n,custom=false){selected=n;amounts.forEach(b=>{const active=custom?b.dataset.amount==='custom':Number(b.dataset.amount)===n;b.classList.toggle('selected',active);b.setAttribute('aria-pressed',String(active));});customWrap.hidden=!custom;const copy=impact(n);tag.textContent=(custom?'YOUR GIFT CAN HELP':naira(n)+' CAN HELP')+' — '+copy[0];title.textContent=copy[1];desc.textContent=copy[2];transferAmount.textContent=naira(n);bank.hidden=true;}
-  amounts.forEach(b=>b.addEventListener('click',()=>{if(b.dataset.amount==='custom'){setAmount(Math.max(0,Number(customInput.value)||0),true);customInput.focus();}else setAmount(Number(b.dataset.amount));}));
-  customInput.addEventListener('input',()=>{selected=Math.max(0,Number(customInput.value)||0);const copy=impact(selected);tag.textContent=selected?naira(selected)+' CAN HELP — '+copy[0]:'YOUR GIFT CAN HELP';title.textContent=copy[1];desc.textContent=copy[2];transferAmount.textContent=naira(selected);});
-  document.querySelectorAll('.impact-card').forEach(c=>c.addEventListener('click',()=>{const n=Number(c.dataset.cardAmount);setAmount(n);document.getElementById('amounts').scrollIntoView({behavior:'smooth',block:'start'});}));
-  document.getElementById('continueButton').addEventListener('click',()=>{if(!selected||selected<100){if(customWrap.hidden){setAmount(1000);}else{customInput.focus();showToast('Please enter an amount of at least ₦100.');return;}}bank.hidden=false;bank.scrollIntoView({behavior:'smooth',block:'start'});});
-  document.getElementById('changeAmount').addEventListener('click',()=>{bank.hidden=true;document.getElementById('amounts').scrollIntoView({behavior:'smooth',block:'start'});});
-  function showToast(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),2200);}
-  async function copyText(text){try{await navigator.clipboard.writeText(text);showToast('Copied to clipboard.');}catch(e){const t=document.createElement('textarea');t.value=text;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');showToast('Copied to clipboard.');}catch(err){showToast('Please copy the details manually.');}t.remove();}}
-  document.getElementById('copyAccount').addEventListener('click',()=>copyText('5601482027'));
-  document.getElementById('copyAmount').addEventListener('click',()=>copyText(String(selected)));
-  const menu=document.querySelector('.menu-toggle'), nav=document.querySelector('.navigation');
-  menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');menu.textContent=open?'×':'☰';});
-  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰';}));
-  setAmount(5000);
-})();
-</script>
+<script src="donate.js?v=2" defer></script>
 </body>
 </html>
